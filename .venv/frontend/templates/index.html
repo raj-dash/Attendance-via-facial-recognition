@@ -16,14 +16,22 @@
       <h1>Face Detection based Attendance</h1>
       <hr class="underline" />
     </div>
-    <form action="">
+    <form action="{{ url_for('face_check') }}" method="post">
       <div class="container btn-container">
-        <input type="submit" class="button-33" value="Recognise" />
-        <input type="submit" class="button-33" value="Capture Face" />
+        <input
+          type="submit"
+          class="button-33"
+          name="recognise"
+          value="Recognise"
+        />
+        <input
+          type="submit"
+          class="button-33"
+          name="saveFace"
+          value="Capture Face"
+        />
       </div>
-      <div id="result" class="container result">
-        <p id="para-result"></p>
-      </div>
+      {% block body %} {% endblock %}
     </form>
   </body>
 </html>
