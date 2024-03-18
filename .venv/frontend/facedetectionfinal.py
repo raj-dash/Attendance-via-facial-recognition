@@ -16,7 +16,7 @@ def load_capture_count():
         with open(capture_count_file, 'r') as file:
             return int(file.read())
     else:
-        return 0
+        return "_1"
 
 def save_capture_count(count):
     with open(capture_count_file, 'w') as file:
@@ -65,12 +65,13 @@ def capture_and_store_face():
                     latest_captured_filename = filename
                     face_captured = True
                     cap.release()
-                    break
+                    capture_count += 1
+                    return latest_captured_filename
 
         if time.time() - start_time > 3:
             print("Timeout: Face capture unsuccessful.")
             cap.release()
-            break
+            return None
 
     capture_count += 1
 
@@ -104,7 +105,7 @@ def recognize_faces():
                         print("Person recognized. Registration Number:", label)
                         face_recognized = True
                     else:
-                        pass
+                        print("Not recognised")
 
         if time.time() - start_time > 3:
             print("Recognition failed. Unknown person.")
