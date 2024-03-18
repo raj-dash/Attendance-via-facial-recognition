@@ -22,7 +22,7 @@ def face_check():
             result = "Not recognised"
         
     elif 'saveFace' in request.form:
-        result = 'saveFace'
+        return render_template('register.html')
 
     return render_template('result.html', result=result) # Renders the result page and shows whether the face is recognised or not
 

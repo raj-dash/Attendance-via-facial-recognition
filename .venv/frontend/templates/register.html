@@ -18,14 +18,25 @@
     <form action="{{ url_for('face_check') }}" method="post" class="container">
       <div class="registration-container">
         <h1 class="registration-heading">Sign Up</h1>
-        <label for="reg_num">Enter your registration number</label>
-        <input type="text" name="reg_num" id="reg-num" />
-        <input
-          type="submit"
-          name="reg_submit"
-          class="button-33"
-          value="reg_submit"
-        />
+        <div class="registration-container2">
+          <label for="reg_num" class="registration-label"
+            >Enter your registration number:
+          </label>
+          <input
+            type="text"
+            name="reg_num"
+            id="reg-num"
+            class="registration-input"
+          />
+        </div>
+        <div class="btn-container registration-btn-container">
+          <input
+            type="submit"
+            name="reg_submit"
+            class="button-33"
+            value="Submit"
+          />
+        </div>
       </div>
     </form>
   </body>
