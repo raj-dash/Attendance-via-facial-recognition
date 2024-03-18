@@ -7,10 +7,26 @@
     <title>Register</title>
   </head>
   <body>
+    <!-- Background effects -->
     <div>
       <div class="wave"></div>
       <div class="wave"></div>
       <div class="wave"></div>
     </div>
+
+    <!-- Main form -->
+    <form action="{{ url_for('face_check') }}" method="post" class="container">
+      <div class="registration-container">
+        <h1 class="registration-heading">Sign Up</h1>
+        <label for="reg_num">Enter your registration number</label>
+        <input type="text" name="reg_num" id="reg-num" />
+        <input
+          type="submit"
+          name="reg_submit"
+          class="button-33"
+          value="reg_submit"
+        />
+      </div>
+    </form>
   </body>
 </html>

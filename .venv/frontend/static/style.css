@@ -51,6 +51,24 @@ h1 {
     align-items: center;
 }
 
+.registration-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-width: 40vw;
+    min-height: 50vh;
+    gap: 2rem;
+
+    background-color: white;
+    border-radius: 30px;
+}
+
+.registration-heading {
+    font-weight: 900;
+    color: rgb(0, 0, 0);
+}
+
 .btn-container {
     gap: 1rem;
 }
