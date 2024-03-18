@@ -1,4 +1,5 @@
 from flask import Flask, render_template, request, url_for
+from facedetectionfinal import *
 
 
 app = Flask(__name__)
@@ -15,7 +16,11 @@ def face_check():
     result = '' 
 
     if 'recognise' in request.form:
-        result = 'recognise'
+        if recognize_faces():
+            result = "Recognised"
+        else:
+            result = "Not recognised"
+        
     elif 'saveFace' in request.form:
         result = 'saveFace'
 
